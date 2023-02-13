@@ -1,0 +1,5 @@
+git show : show an object
+git log : give the commit history
+git checkout : resets master so that it points to the most commit again
+git init : creates a hidden folder called git
+git reset : undo a commit
