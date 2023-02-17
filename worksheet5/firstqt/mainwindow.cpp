@@ -2,17 +2,17 @@
 #include "./ui_mainwindow.h"
 #include <QMessageBox>
 void MainWindow::handleButton(){
-    //emit statusUpdateMessage( QString("Add button was clicked"), 0);
-    QMessageBox msgBox;
-    msgBox.setText("add button was clicked");
-    msgBox.exec();
+    emit statusUpdateMessage( QString("Add button was clicked"), 0);
+    //QMessageBox msgBox;
+    //msgBox.setText("add button was clicked");
+    //msgBox.exec();
 }
 
 void MainWindow::handleButton_2(){
-    //emit statusUpdateMessage( QString("Add button was clicked"), 0);
-    QMessageBox msgBox;
-    msgBox.setText("add button 2 was clicked");
-    msgBox.exec();
+    emit statusUpdateMessage( QString("Add button 2 was clicked"), 0);
+    //QMessageBox msgBox;
+    //msgBox.setText("add button 2 was clicked");
+    //msgBox.exec();
 }
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -21,6 +21,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     connect( ui-> pushButton, &QPushButton::released, this, &MainWindow::handleButton );
     connect( ui-> pushButton_2, &QPushButton::released, this, &MainWindow::handleButton_2 );
+    connect( this, &MainWindow::statusUpdateMessage, ui->statusbar, &QStatusBar::showMessage);
+
 
 }
 
