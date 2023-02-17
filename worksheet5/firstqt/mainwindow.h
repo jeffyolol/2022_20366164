@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
 public slots:
     void handleButton();
     void handleButton_2();
+    void handleTreeClicked();
 
 signals:
     void statusUpdateMessage( const QString & message, int timeout );

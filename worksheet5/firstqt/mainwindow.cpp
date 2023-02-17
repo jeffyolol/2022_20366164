@@ -14,6 +14,14 @@ void MainWindow::handleButton_2(){
     //msgBox.setText("add button 2 was clicked");
     //msgBox.exec();
 }
+
+void MainWindow::handleTreeClicked(){
+    emit statusUpdateMessage( QString("Add button 2 was clicked"), 0);
+    QModelIndex index = ui->treeView->currentIndex();
+    ModelPart *selectedPart = static_cast<ModelPart*>(index.internalPointer());
+    QString text = selectedPart->data(0).toString();
+    emit statusUpdateMessage(QString("The selected item is:")+text, 0);
+}
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -22,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect( ui-> pushButton, &QPushButton::released, this, &MainWindow::handleButton );
 
     connect( ui-> pushButton_2, &QPushButton::released, this, &MainWindow::handleButton_2 );
+
+    connect( ui-> treeView, &QTreeView::clicked, this, &MainWindow::handleTreeClicked );
 
     connect( this, &MainWindow::statusUpdateMessage, ui->statusbar, &QStatusBar::showMessage);
 
