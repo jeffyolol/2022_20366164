@@ -22,6 +22,10 @@ void MainWindow::handleTreeClicked(){
     QString text = selectedPart->data(0).toString();
     emit statusUpdateMessage(QString("The selected item is:")+text, 0);
 }
+
+void MainWindow::on_actionOpen_File_triggered(){
+    emit statusUpdateMessage( QString("Open File action triggered"));
+}
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -34,6 +38,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect( ui-> treeView, &QTreeView::clicked, this, &MainWindow::handleTreeClicked );
 
     connect( this, &MainWindow::statusUpdateMessage, ui->statusbar, &QStatusBar::showMessage);
+
+    connect( ui=>actionOpenFile , &QAction::triggered,this,&MainWindow::alternative_slot_function_name ) ;
 
     this->partList = new ModelPartList("PartsList");
 
