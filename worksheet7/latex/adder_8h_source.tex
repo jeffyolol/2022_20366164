@@ -1,0 +1,25 @@
+\hypertarget{adder_8h_source}{}\doxysection{adder.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//begin\ adder.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ MATHSLIB\_ADDER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ MATHSLIB\_ADDER\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#if\ defined(WIN32)|defined(\_WIN32)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ maths\_STATIC}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ MATHSLIB\_API}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ maths\_EXPORTS}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ MATHSLIB\_API\ \_\_declspec(\ dllexport\ )}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ MATHSLIB\_API\ \_\_declspec(\ dllimport\ )}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ MATHSLIB\_API}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ MATHSLIB\_API\ \textcolor{keywordtype}{int}\ add(\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b);}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//end\ -\/\ adder.h-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00029\ }
+
+\end{DoxyCode}
