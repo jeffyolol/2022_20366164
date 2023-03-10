@@ -91,7 +91,14 @@
     </property>
     <addaction name="actionOpen_File"/>
    </widget>
+   <widget class="QMenu" name="menuVR">
+    <property name="title">
+     <string>VR</string>
+    </property>
+    <addaction name="actionopenVR"/>
+   </widget>
    <addaction name="menuFiles"/>
+   <addaction name="menuVR"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -113,6 +120,11 @@
    </property>
    <property name="text">
     <string>openfile</string>
+   </property>
+  </action>
+  <action name="actionopenVR">
+   <property name="text">
+    <string>openVR</string>
    </property>
   </action>
  </widget>
